@@ -1,8 +1,8 @@
 在输出程序时，心血来潮试了一下如下语句，得到如下警告：
-<pre><code>	warning: unsequenced modification and access to 'i' [-Wunsequenced]
-                cout<< "A["<<i<<"] is " << A[i++] <<endl;
-                             ~                ^
-</code></pre>
+>  warning: unsequenced modification and access to 'i' [-Wunsequenced]
+>                cout<< "A["<<i<<"] is " << A[i++] <<endl;
+>                             ~                ^
+
 
 Google 之~，得到参考博客：http://www.dlifep.com/?p=338 
 
