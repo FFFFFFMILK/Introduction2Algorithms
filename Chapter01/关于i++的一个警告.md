@@ -1,15 +1,15 @@
 在输出程序时，心血来潮试了一下如下语句，得到如下警告：
-warning: unsequenced modification and access to 'i' [-Wunsequenced]
-                cout<< "A["<<i<<"] is " << A[i++] <<endl;
-                             ~                ^
+>warning: unsequenced modification and access to 'i' [-Wunsequenced]
+>                cout<< "A["<<i<<"] is " << A[i++] <<endl;
+>                             ~                ^
 
-Google 之~得到参考博客：http://www.dlifep.com/?p=338 
+Google 之~，得到参考博客：http://www.dlifep.com/?p=338 
 
 警告的意思是：对 i 的读取和修改顺序不明确。
 
-相关概念：
+相关知识点：
  - Sequence Point：序列点，是一个时间点，（在整个表达式全部计算完毕之后或者在||、&&、?:或者是逗号运算符处，或函数调用之前），此刻尘埃落定，所有的副作用都已确保结束。
 
- 在两个序列点之间，一个对象所保存的值最多只能被修改一次。此外，修改之前的那个值最多只能用于决定即将保存的这个值。
+ - 在两个序列点之间，一个对象所保存的值最多只能被修改一次。此外，修改之前的那个值最多只能用于决定即将保存的这个值。
 
- 总之就是 a[i++] = i; 这种写法不合法，在不同的编译器下可能会有不同的结果。
+ - 总之就是 a[i++] = i; 这种写法不合法，在不同的编译器下可能会有不同的结果。
